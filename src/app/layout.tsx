@@ -18,7 +18,7 @@ export default function RootLayout({
         <link rel="icon" href="/bag.svg" />
       </head>
       <body
-        className="bg-gray-100 font-sans antialiased"
+        className="bg-gray-100 font-sans antialiased overflow-hidden"
       >
         {children}
       </body>

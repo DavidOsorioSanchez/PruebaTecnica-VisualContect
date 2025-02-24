@@ -4,16 +4,18 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const useApiRequest = ({ url }: { url: string }) => {
+const useApiGetAll = ({ urlRequest = ""}: { urlRequest: string}) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<unknown>(null);
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(url);
-                setData(response.data);
+                axios.get(urlRequest).then((response) => {
+                    setData(response.data);
+                });
             } catch (error) {
                 setError(error);
             } finally {
@@ -22,9 +24,9 @@ const useApiRequest = ({ url }: { url: string }) => {
         };
 
         fetchData();
-    }, [url]);
+    }, [urlRequest]);
 
     return { data, loading, error };
 };
 
-export default useApiRequest;
+export default useApiGetAll;
