@@ -2,14 +2,18 @@
 
 import axios from 'axios';
 
+interface useApiPostProps {
+    urlResponse: string;
+    information: Object;
+}
 
-const useApiPost = async({ urlResponse = "", information = {} }: { urlResponse: string, information: Object}) => {
+const useApiPost = async({ urlResponse = "", information = {} }:useApiPostProps) => {
 
     try {
         const response = await axios.post(urlResponse, information);
         console.log('Response:', response.data);
     } catch (error) {
-        console.error('Error:', error);
+        console.warn('Error:', error);
     }
     ;
 };

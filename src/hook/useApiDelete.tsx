@@ -9,7 +9,7 @@ const useApiDelete = async({ urlResponse = "", id }: { urlResponse: string, id: 
         const response = await axios.delete(`${urlResponse}/${id}`);
         return response.data;
     } catch (error) {
-        console.error('Error:', error);
+        console.warn('Error:', error);
     }
     ;
 };
