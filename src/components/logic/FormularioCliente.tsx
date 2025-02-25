@@ -34,8 +34,8 @@ export default function FormularioCliente(){
             console.log('Response:', response.data);
         } catch (error) {
             console.warn('Error:', error);
-        }
-        ;
+        };
+        
     };
 
     return(
