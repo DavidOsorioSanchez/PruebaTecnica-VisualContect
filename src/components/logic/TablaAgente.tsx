@@ -24,13 +24,14 @@ export default function TablaAgente() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     // const dataURLAgente: string = process.env.DATA_URL_AGENTE || "";
-    const dataURLAgente: string = "https://localhost:7001/api/Agente";
+    const dataURLAgente: string = "https://localhost:5000/api/Agente";
 
 
     const fetchPosts = async () => {
         try {
             const response = await axios.get(dataURLAgente);
             setData(response.data);
+            console.log(response.data);
         } catch (error) {
             console.warn("Se a precentado el error: " + error);
         } finally {

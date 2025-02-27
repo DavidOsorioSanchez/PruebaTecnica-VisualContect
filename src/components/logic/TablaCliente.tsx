@@ -15,13 +15,14 @@ export default function TablaCliente(){
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     // const dataURLCliente: string = process.env.DATA_URL_CLIENTE || "";
-    const dataURLCliente: string = "https://localhost:7001/api/Cliente";
+    const dataURLCliente: string = "https://localhost:5000/api/Cliente";
 
 
     const fetchPosts = async () => {
         try{
             const response = await axios.get(dataURLCliente);
             setData(response.data);
+            console.log(response.data);
         }catch (error) {
             console.warn("Se a precentado el error: " + error);
         } finally {

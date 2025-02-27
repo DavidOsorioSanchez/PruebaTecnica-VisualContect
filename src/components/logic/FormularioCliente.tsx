@@ -25,9 +25,9 @@ export default function FormularioCliente(){
         const nombre: string = inputRef.current?.value || "";
         const fecha: string = dateRef.current?.value || "";
 
-        // useApiPost({urlResponse: "https://localhost:7001/api/Cliente" /*process.env.DATA_URL_CLIENTE || ""*/, information: {nombre, tiempo}});
+        // useApiPost({urlResponse: "https://localhost:5000/api/Cliente" /*process.env.DATA_URL_CLIENTE || ""*/, information: {nombre, tiempo}});
         try {
-            const response = await axios.post("https://localhost:7001/api/Agente", {
+            const response = await axios.post("https://localhost:5000/api/Agente", {
                 nombre: nombre,
                 fecha: fecha
             });
