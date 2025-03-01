@@ -15,7 +15,7 @@ export default function TablaCliente(){
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     // const dataURLCliente: string = process.env.DATA_URL_CLIENTE || "";
-    const dataURLCliente: string = "https://localhost:5000/api/Cliente";
+    const dataURLCliente: string = "http://localhost:5000/api/Cliente";
 
 
     const fetchPosts = async () => {

@@ -17,10 +17,10 @@ export default function FormularioAgente(){
     const handleSubmit = async () => {
         const nombre: string = inputRef.current?.value || "";
         const estado: number = parseInt(selectRef.current?.value || "3");
-        // useApiPost({urlResponse: "https://localhost:5000/api/Agente"/*process.env.DATA_URL_AGENTE || ""*/, information: {nombre, estado}});
+        // useApiPost({urlResponse: "http://localhost:5000/api/Agente"/*process.env.DATA_URL_AGENTE || ""*/, information: {nombre, estado}});
 
         try {
-            const response = await axios.post("https://localhost:5000/api/Agente", {
+            const response = await axios.post("http://localhost:5000/api/Agente", {
                 nombre: nombre,
                 estado: estado
             });

@@ -24,7 +24,7 @@ export default function TablaAgente() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     // const dataURLAgente: string = process.env.DATA_URL_AGENTE || "";
-    const dataURLAgente: string = "https://localhost:5000/api/Agente";
+    const dataURLAgente: string = "http://localhost:5000/api/Agente";
 
 
     const fetchPosts = async () => {
